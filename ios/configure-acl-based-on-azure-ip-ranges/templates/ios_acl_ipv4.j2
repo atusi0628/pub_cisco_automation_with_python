@@ -1,0 +1,6 @@
+no ip access-list extended IPv4PowerBIranges
+ip access-list extended IPv4PowerBIranges
+{%- for item in ipv4_list %}
+ {{ item.sequence }} permit ip any {{ item.address }} {{ item.wildcard }}
+{%- endfor -%}
+
