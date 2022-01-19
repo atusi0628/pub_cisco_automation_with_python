@@ -16,8 +16,8 @@ cisco_ios = {
 # Credentials for Azure
 SUBSCRIPTION_ID = "<Your subscription id>"
 TENANT_ID = "<Your AAD tenant id>"
-CLIENT_ID = "<Your app id obtain from service principal"
-SECRET = "<Your app secret obtain from service principal"
+CLIENT_ID = "<Your app id obtain from service principal>"
+SECRET = "<Your app secret obtain from service principal>"
 
 # Information used to obtain the Azure IP ranges
 location = "<Your Azure region>"
@@ -74,8 +74,6 @@ def main():
     # Connect IOS
     ssh = ConnectHandler(**cisco_ios)
     ssh.enable()
-
-    # Generate config
 
     # Send config
     ssh.send_config_from_file('ios_acl_ipv4.conf')
