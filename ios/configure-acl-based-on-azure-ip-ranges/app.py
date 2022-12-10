@@ -35,6 +35,7 @@ def main():
     for item in result.values:
         if item.name == target_tag_name:
             address_prefixes = item.properties.address_prefixes
+            break
 
     # Create lists used to generate config file
     ipv4_sequence = 10
