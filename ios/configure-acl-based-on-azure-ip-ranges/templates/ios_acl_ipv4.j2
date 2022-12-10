@@ -1,5 +1,5 @@
-no ip access-list extended IPv4PowerBIranges
-ip access-list extended IPv4PowerBIranges
+no ip access-list extended IPv4{{ target_tag_name }}Ranges
+ip access-list extended IPv4{{ target_tag_name }}Ranges
 {%- for item in ipv4_list %}
  {{ item.sequence }} permit ip any {{ item.address }} {{ item.wildcard }}
 {%- endfor -%}

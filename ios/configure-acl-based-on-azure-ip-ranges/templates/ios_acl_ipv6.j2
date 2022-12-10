@@ -1,5 +1,5 @@
-no ipv6 access-list IPv6PowerBIranges
-ipv6 access-list IPv6PowerBIranges
+no ipv6 access-list IPv6{{ target_tag_name }}Ranges
+ipv6 access-list IPv6{{ target_tag_name}}Ranges
 {%- for item in ipv6_list %}
  sequence {{ item.sequence }} permit ip any {{ item.address_mask }}
 {%- endfor -%}

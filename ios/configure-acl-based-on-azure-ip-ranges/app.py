@@ -62,14 +62,14 @@ def main():
     with open('ios_acl_ipv4.conf', 'w') as f:
         env = jinja2.Environment(loader=jinja2.FileSystemLoader('./templates/'))
         template = env.get_template('ios_acl_ipv4.j2')
-        result = template.render(ipv4_list=ipv4_list)
+        result = template.render(ipv4_list=ipv4_list, target_tag_name=target_tag_name)
         f.write(result)
 
     # Generate config from ipv6_list
     with open('ios_acl_ipv6.conf', 'w') as f:
         env = jinja2.Environment(loader=jinja2.FileSystemLoader('./templates/'))
         template = env.get_template('ios_acl_ipv6.j2')
-        result = template.render(ipv6_list=ipv6_list)
+        result = template.render(ipv6_list=ipv6_list, target_tag_name=target_tag_name)
         f.write(result)
 
     # Connect IOS
